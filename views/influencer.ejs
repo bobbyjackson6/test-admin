@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title><% pageInfo%></title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/media.css" />
+  </head>
+  <body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-77178353-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-77178353-1");
+      gtag("config", "UA-77178353-4");
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "724240418057504");
+      fbq("track", "PageView");
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none;"
+        src="https://www.facebook.com/tr?id=724240418057504&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <script type="text/javascript">
+      !(function () {
+        var t = document.createElement("script");
+        (t.type = "text/javascript"),
+          (t.async = !0),
+          (t.src = "https://vk.com/js/api/openapi.js?160"),
+          (t.onload = function () {
+            VK.Retargeting.Init("VK-RTRG-371378-1ZFaI"), VK.Retargeting.Hit();
+          }),
+          document.head.appendChild(t);
+      })();
+    </script>
+    <noscript
+      ><img
+        src="https://vk.com/rtrg?p=VK-RTRG-371378-1ZFaI"
+        style="position: fixed; left: -999px;"
+        alt=""
+    /></noscript>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
+
+      ym(37320625, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: false,
+        trackHash: true,
+        ecommerce: "dataLayer",
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/37320625"
+          style="position: absolute; left: -9999px;"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <div class="container">
+      <header class="header">
+        <div class="logos">
+          <img
+            class="csmoney-logo"
+            src="../img/csmoney-logo-big.svg"
+            alt="CSMONEY"
+          />
+          <img class="cross" src="../img/Cross.svg" alt="cross" />
+          <div class="partner-logo">
+            <img
+              src="../img/"
+              alt=""
+            />
+            <div class="partner-name"><% pageInfo%> </div>
+          </div>
+        </div>
+        <div class="get-bonus">
+          <div class="text">
+            <span class="en">Get a bonus</span>
+            <!-- ru -->
+            <span class="ru">Получить бонус</span>
+            <!--  -->
+            <img src="../img/Vector.png" alt="get bonus" />
+          </div>
+          <div class="button-wrapper">
+            <a
+              class="button en"
+              href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+              ><img src="../img/Steam_logo.png" alt="Steam" /> sign in through
+              steam</a
+            >
+            <!-- Sign in ru -->
+            <a
+              class="button ru"
+              href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+              ><img src="../img/Steam_logo.png" alt="Steam" />Войти с помощью
+              Steam</a
+            >
+            <!--  -->
+          </div>
+        </div>
+      </header>
+      <!--  -->
+      <div class="circle">
+        <div class="image"><img src="../img/45.png" alt="+45%" /></div>
+        <span class="circle-line"></span>
+        <span class="circle-line"></span>
+        <img
+          class="background-image-m4"
+          src="../img/background/m4.png"
+          alt="m4"
+        />
+        <img
+          src="../img/background/gloves.png"
+          alt="gloves"
+          class="background-image-gloves"
+        />
+        <img
+          src="../img/background/usp.png"
+          alt="usp"
+          class="background-image-usp"
+        />
+        <img
+          src="../img/background/knife.png"
+          alt="knife"
+          class="background-image-knife"
+        />
+        <div class="get-bonus-container">
+          <div class="get-bonus-title en">
+            </span>
+          </div>
+          <div class="get-bonus-desctiption en">
+            
+          </div>
+          <div class="get-bonus-button en">
+            <a
+              href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+              >GET a bonus</a
+            >
+          </div>
+        </div>
+        <!-- get-bonus ru -->
+        <div class="get-bonus-container">
+          <div class="get-bonus-title ru">
+            Специальный бонус от <span></span>
+          </div>
+          <div class="get-bonus-desctiption ru">
+            Регистрируйтесь на CS.MONEY через эту страницу и получите + 45% от
+            Gaules на первое пополнение.
+          </div>
+          <div class="get-bonus-button ru">
+            <a
+              href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+              >ПОЛУЧИТЬ бонус</a
+            >
+          </div>
+        </div>
+        <!--   -->
+      </div>
+      <!--  -->
+      <div class="instruction-wrapper">
+        <div class="instruction-title en">How can i get a bonus?</div>
+        <!-- ru -->
+        <div class="instruction-title ru">Как я могу получить бонус?</div>
+        <!--  -->
+        <div class="steps">
+          <div class="step">
+            <div class="step-image">
+              <img src="../img/instruction/Register.png" alt="Register" />
+            </div>
+            <div class="step-description en">
+              Register and get training on CS.MONEY
+            </div>
+            <!-- ru -->
+            <div class="step-description ru">
+              Зарегистрируйтесь и пройдите обучение на CS.MONEY
+            </div>
+            <!--  -->
+          </div>
+          <div class="step">
+            <div class="step-image">
+              <img
+                src="../img/instruction/instruction-2.png"
+                alt="+45%-bonus"
+              />
+            </div>
+            <div class="step-description en">
+              After registration, you will get a 45% bonus for your first refill
+            </div>
+            <!-- ru -->
+            <div class="step-description ru">
+              После регистрации, вы получите 45% бонус на первое пополнение.
+            </div>
+            <!--  -->
+          </div>
+
+          <div class="step">
+            <div class="step-image">
+              <img src="../img/instruction/Balance.png" alt="Balance" />
+            </div>
+            <div class="step-description en">
+              Bonus will be available until first time you replenish a balance.
+            </div>
+            <!-- ru -->
+            <div class="step-description ru">
+              Бонус будет доступен до первого пополнения баланса.
+            </div>
+            <!--  -->
+          </div>
+          <div class="step">
+            <div class="step-image">
+              <img src="../img/instruction/Buy-skins.png" alt="Buy-skins" />
+            </div>
+            <div class="step-description en">
+              Replenish and buy skins profitably with CS.MONEY
+            </div>
+            <!-- ru -->
+            <div class="step-description ru">
+              Пополняйте и покупайте скины выгодно с CS.MONEY
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="about-container">
+        <div class="gaules-about-title en">
+          <span> </span> about CS.MONEY
+        </div>
+        <!-- ru -->
+        <div class="gaules-about-title ru">
+          <span> </span> о CS.MONEY
+        </div>
+        <!--  -->
+        <div class="chat">
+          <div class="from-user">
+            <div class="user-avatar">
+              <img src="../img/Logo.png" alt="Logo" />
+            </div>
+            <div class="user-comment">
+              <div class="comment-from">
+                <img src="../img/star.svg" alt="trustpilot logo" />
+                <span>Trustpilot</span>
+                <img src="../img/Rating.svg" alt="rating" />
+              </div>
+              <div class="comment-text en">
+                The site is simply TOP! You can buy cool skins, with cool
+                stickers cheaper than on Steam! I advise everyone)
+              </div>
+              <!-- ru -->
+              <div class="comment-text ru">
+                Сайт просто ТОП! можно купить крутые скины, с крутыми наклейками
+                дешевле чем в Steam! Всем советую)
+              </div>
+              <!--  -->
+              <div class="comment-date">12.10.2019</div>
+            </div>
+          </div>
+          <div class="from-csmoney">
+            <div class="our-comment">
+              <div class="comment-text comment-text-our">
+                <span class="en">Thank you!</span>
+                <!-- ru -->
+                <span class="ru">Спасибо!</span>
+                <!--  -->
+                <img src="../img/Perfect.svg" alt="smile" />
+              </div>
+              <div class="comment-date">12.10.2019</div>
+            </div>
+            <div class="our-avatar">
+              <img src="../img/CS.MONEY.png" alt="csmoney" />
+            </div>
+          </div>
+
+          <div class="check-review-wrapper">
+            <a
+              class="check-review"
+              href="https://ru.trustpilot.com/review/cs.money"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="en">Check the review on Trustpilot</span>
+              <!-- ru -->
+              <span class="ru">Посмотрите отзыв на Trustpilot</span>
+              <!--  -->
+              <img src="../img/Go_to.svg" alt="vector" />
+            </a>
+          </div>
+        </div>
+        <div class="videos">
+          <div class="video">
+            <!-- <img src="../videos/video-1.png" alt="video-1" />
+            <div class="video-title">KENNYS XITANDO EM CAMPEONATO? #2</div>
+            <button class="play-button">
+              <img src="../Play-button.svg" alt="video-2" />
+            </button> -->
+            <iframe
+              width="340"
+              height="230"
+              src="https://www.youtube.com/embed/5AWDYblpe10"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <div class="video-title">KENNYS XITANDO EM CAMPEONATO? #2</div>
+          </div>
+          <div class="video">
+            <iframe
+              width="340"
+              height="230"
+              src="https://www.youtube.com/embed/qbrBT24Hnh4"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <div class="video-title">
+              CRIAMOS a Escuderia G3X RACING no MOTORSPORT MANAGER!!!
+            </div>
+            <!-- <img src="../videos/video-2.png" alt="video-3" />
+            <div class="video-title">
+              CRIAMOS a Escuderia G3X RACING no MOTORSPORT MANAGER!!!
+            </div>
+            <button class="play-button">
+              <img src="../Play-button.svg" alt="play-button" />
+            </button> -->
+          </div>
+          <div class="video">
+            <iframe
+              width="340"
+              height="230"
+              src="https://www.youtube.com/embed/plxG7Hi3CBQ"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <div class="video-title">OMELETE COMPANY e GAULES!!!</div>
+            <!-- <img src="../videos/video-3.png" alt="play-button" />
+            <div class="video-title">OMELETE COMPANY e GAULES!!!</div>
+            <button class="play-button">
+              <img src="../Play-button.svg" alt="play-button" />
+            </button> -->
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="call-to-action">
+        <a
+          class="csmoney-link en"
+          href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+          >Use CS.MONEY with  </a
+        >
+        <!-- ru -->
+        <a
+          class="csmoney-link ru"
+          href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+          >Пользуйся CS.MONEY вместе с  </a
+        >
+        <!--  -->
+        <div class="call-to-action-title en">
+          Get a +45% bonus on your first recharge
+        </div>
+        <!-- ru -->
+        <div class="call-to-action-title ru">
+          Получите бонус + 45% при первом пополнении баланса
+        </div>
+        <!--  -->
+        <div class="activation-promo">
+          <!-- <div class="promocode">GAULES45</div> -->
+          <input class="promocode" type="text" value="45" />
+          <a
+            class="en activate-button"
+            href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+            >ACTIVATE</a
+          >
+          <!-- ru -->
+          <a
+            class="ru activate-button"
+            href="https://steamcommunity.com/openid/login?openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=https%3A%2F%2Fauth.dota.trade%2Flogin%2Fcallback%3FredirectUrl%3Dhttps%3A%2F%2Fcs.money%26callbackUrl%3Dhttps%3A%2F%2Fcs.money%2Flogin&openid.realm=https%3A%2F%2Fauth.dota.trade"
+            >АКТИВИРОВАТЬ</a
+          >
+          <!--  -->
+        </div>
+        <div class="activation-tip en">
+          Promocode is automatically activated on CS.MONEY after clicking
+          activate button.
+        </div>
+        <!-- ru -->
+        <div class="activation-tip ru">
+          Промокод автоматически активируется на CS.MONEY после нажатия кнопки
+          активаци.
+        </div>
+        <!--  -->
+        <div class="background-blur"></div>
+        <img
+          class="background-image-butterfly"
+          src="../img/background/butterfly.png"
+          alt="butterfly"
+        />
+        <img
+          class="background-image-scout"
+          src="../img/background/scout.png"
+          alt="scout"
+        />
+      </div>
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <div class="copyrights">
+            Copyright © 2020 <span>CS.MONEY </span> All rights reserved.
+          </div>
+          <div class="social-media">
+            <a
+              href="https://steamcommunity.com/groups/csmoneytrade"
+              target="_blank"
+              rel="noopener"
+              ><img src="../img/sm/Steam.svg" alt="Steam"
+            /></a>
+            <a
+              href="https://twitter.com/csmoneytrade"
+              target="_blank"
+              rel="noopener"
+              ><img src="../img/sm/Twitter.svg" alt="Twitter"
+            /></a>
+            <a
+              href="https://www.instagram.com/csmoneytrade/"
+              target="_blank"
+              rel="noopener"
+              ><img src="../img/sm/Instagram.svg" alt="Instagram"
+            /></a>
+            <a href="https://vk.com/csmoneytrade" target="_blank" rel="noopener"
+              ><img src="../img/sm/Vk.svg" alt="VK"
+            /></a>
+            <a
+              href="https://www.facebook.com/csmoneytrade/"
+              target="_blank"
+              rel="noopener"
+              ><img src="../img/sm/Facebook.svg" alt="Facebook"
+            /></a>
+            <a
+              href="https://discordapp.com/invite/vmUuupq"
+              target="_blank"
+              rel="noopener"
+              ><img src="../img/sm/Discord.svg" alt="Discord"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

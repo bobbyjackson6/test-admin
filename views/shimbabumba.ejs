@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/admin.css" />
+    <title>Shimbabumba</title>
+  </head>
+  <body>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        max-width: 1304px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+      }
+      .make-new-page {
+        align-self: center;
+      }
+      .list {
+        display: flex;
+        flex-direction: column;
+      }
+      .form-wrapper {
+        display: none;
+      }
+      .change-language-button {
+        text-align: center;
+      }
+      .form-en,
+      .form-ru {
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+      }
+      form div {
+        margin-bottom: 20px;
+      }
+
+      .main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .form-ru,
+      .form-en {
+        display: none;
+      }
+    </style>
+    <div class="container">
+      <h2>Admin Panel</h2>
+      <div class="make-new-page">
+        <input type="button" value="Create New Page" id="newPageBtn" />
+      </div>
+      <div class="main">
+        <div class="pages">
+          Список страниц:
+          <ul class="list">
+            <% for (title of titles) {%>
+            <li>
+              <%= title.title%>
+              <button>Edit</button>
+            </li>
+
+            <% } %>
+          </ul>
+        </div>
+        <div class="form-wrapper">
+          <div class="change-language-button">
+            <button id="en-btn">ENG</button>
+            <button id="ru-btn">RUS</button>
+          </div>
+          <form
+            class="form-en"
+            action="/shimbabumba/admin"
+            method="post"
+            class="info"
+          >
+            <!-- 1 -->
+            <div>
+              <label for="titleEn">En-Title</label>
+              <input name="title" type="text" />
+            </div>
+
+            <!-- 2 -->
+            <div>
+              <label for="descriptionEn">En-Description</label>
+              <input name="description" type="text" />
+            </div>
+
+            <!-- 3 -->
+            <div>
+              <label for="aliasEn">En-Alias</label>
+              <input type="text" name="alias" />
+            </div>
+
+            <!-- 4 -->
+            <div>
+              <label for="firstLogoEn">En-Header Logo </label>
+              <input name="firstLogo" type="file" />
+            </div>
+
+            <!-- 5 -->
+            <div>
+              <label for="secondLogoEn">En-Chat Logo</label>
+              <input name="secondLogo" type="file" />
+            </div>
+
+            <!-- 6 -->
+            <div>
+              <label for="bloggerNameEn">Name of blogger</label>
+              <input type="text" name="bloggerName" />
+            </div>
+
+            <!-- 7 -->
+            <div>
+              <label for="mainHeaderEn">Main header</label>
+              <input name="mainHeader" type="text" />
+            </div>
+
+            <!-- 8 -->
+            <div>
+              <label for="subtitleEn">Text under Title</label>
+              <input type="text" name="subtitle" />
+            </div>
+
+            <!-- 9 -->
+            <div>
+              <label for="buttonTextEn">Button text</label>
+              <input type="text" name="buttonText" />
+            </div>
+
+            <!-- 10 -->
+
+            <!-- 11 -->
+            <div>
+              <label for="infoHeaderEn">Title of info</label>
+              <input type="text" name="infoHeader" />
+            </div>
+
+            <!-- 12-1 -->
+            <div>
+              <label for="imageText1En">Text of 1 image</label>
+              <input type="text" name="imageText1" />
+            </div>
+
+            <!-- 12-2 -->
+            <div>
+              <label for="imageText2En">Text of 2 image</label>
+              <input type="text" name="imageText2" />
+            </div>
+
+            <!-- 12-3 -->
+            <div>
+              <label for="imageText3En">Text of 3 image</label>
+              <input type="text" name="imageText3" />
+            </div>
+
+            <!-- 12-4 -->
+            <div>
+              <label for="imageText4En">Text of 4 image</label>
+              <input type="text" name="imageText4" />
+            </div>
+
+            <!-- 13 -->
+            <div>
+              <label for="feedbackHeaderEn">Header of feedback</label>
+              <input type="text" name="feedbackHeader" />
+            </div>
+
+            <!-- 14 -->
+            <div>
+              <label for="feedbackTextEn">Text of feedback</label>
+              <input type="text" name="feedbackText" />
+            </div>
+
+            <!-- 15 -->
+            <div>
+              <label for="reviewLinkEn">Review text link</label>
+              <input type="text" name="reviewLink" />
+            </div>
+
+            <!-- 16 -->
+            <div>
+              <label for="csmoneyAnswerEn">CS.MONEY answer</label>
+              <input type="text" name="csmoneyAnswer" />
+            </div>
+
+            <!-- 17-1 -->
+            <div class="video">
+              <label for="video1">Link of 1st video</label>
+              <input type="url" name="video1" />
+            </div>
+            <!-- 17-2 -->
+            <div class="video">
+              <label for="video2">Link of 2nd video</label>
+              <input type="url" name="video2" />
+            </div>
+            <!-- 17-3 -->
+            <div class="video">
+              <label for="video3">Link of 3rd video</label>
+              <input type="url" name="video3" />
+            </div>
+            <!-- 18 -->
+            <div>
+              <label for="useCsmoneywithEn">use CS.Money with: link</label>
+              <input type="text" name="useCsmoneywith" />
+            </div>
+
+            <!-- 19 -->
+            <div>
+              <label for="finalHeaderEn">Header of final Block</label>
+              <input type="text" name="finalHeader" />
+            </div>
+
+            <!-- 20 -->
+
+            <!-- 21 -->
+            <div>
+              <label for="promocode">Promocode of final block</label>
+              <input type="text" name="promocode" />
+            </div>
+            <!-- 22 -->
+            <div>
+              <label for="finalButtonEn">Text of final button</label>
+              <input type="text" name="finalButton" />
+            </div>
+
+            <!-- 23 -->
+            <div>
+              <label for="textUnderFinalButton">Text under final button</label>
+              <input type="text" name="textUnderFinalButton" />
+            </div>
+            <!-- button -->
+            <button type="submit">Send</button>
+          </form>
+          <form
+            class="form-ru"
+            action="/shimbabumba/admin"
+            method="post"
+            class="info"
+          >
+            <!-- 1 -->
+            <div>
+              <label for="titleRu">Ru-Title</label>
+              <input name="title" type="text" />
+            </div>
+            <!-- 2 -->
+
+            <div>
+              <label for="descriptionRu">Ru-Description</label>
+              <input name="description" type="text" />
+            </div>
+            <!-- 3 -->
+
+            <div>
+              <label for="aliasRu">Ru-Alias</label>
+              <input type="text" name="alias" />
+            </div>
+            <!-- 4 -->
+
+            <div>
+              <label for="firstLogoRu">Ru-Header Logo</label>
+              <input name="firstLogo" type="file" />
+            </div>
+            <!-- 5 -->
+
+            <div>
+              <label for="secondLogoRu">Ru-Chat Logo</label>
+              <input name="secondLogo" type="file" />
+            </div>
+            <!-- 6 -->
+
+            <div>
+              <label for="bloggerName">Name of blogger</label>
+              <input type="text" name="bloggerName" />
+            </div>
+            <!-- 7 -->
+
+            <div>
+              <label for="mainHeaderRu">Главный заголовок</label>
+              <input name="mainHeader" type="text" />
+            </div>
+            <!-- 8 -->
+
+            <div>
+              <label for="subtitleRu">Текст под заголовком</label>
+              <input type="text" name="subtitle" />
+            </div>
+            <!-- 9 -->
+
+            <div>
+              <label for="buttonTextRu">Текст кнопки</label>
+              <input type="text" name="buttonText" />
+            </div>
+            <!-- 10 -->
+
+            <!-- 11 -->
+
+            <div>
+              <label for="infoHeaderRu">Заголовок блока инфографики</label>
+              <input type="text" name="infoHeader" />
+            </div>
+            <!-- 12-1 -->
+
+            <div>
+              <label for="imageText1Ru">Текст под 1 изображением</label>
+              <input type="text" name="imageText1" />
+            </div>
+            <!-- 12-2 -->
+
+            <div>
+              <label for="imageText2Ru">Текст под 2 изображением</label>
+              <input type="text" name="imageText2" />
+            </div>
+            <!-- 12-3 -->
+
+            <div>
+              <label for="imageText3Ru">Текст под 3 изображением</label>
+              <input type="text" name="imageText3" />
+            </div>
+            <!-- 12-4 -->
+
+            <div>
+              <label for="imageText4Ru">Текст под 4 изображением</label>
+              <input type="text" name="imageText4" />
+            </div>
+            <!-- 13 -->
+
+            <div>
+              <label for="feedbackHeaderRu">Заголовок отзыва</label>
+              <input type="text" name="feedbackHeader" />
+            </div>
+            <!-- 14 -->
+
+            <div>
+              <label for="feedbackTextRu">Текст отзыва</label>
+              <input type="text" name="feedbackText" />
+            </div>
+            <!-- 15 -->
+
+            <div>
+              <label for="reviewLinkRu">Текст на ссылку отзывов</label>
+              <input type="text" name="reviewLink" />
+            </div>
+            <!-- 16 -->
+
+            <div>
+              <label for="csmoneyAnswerRu">Ответ CS.MONEY</label>
+              <input type="text" name="csmoneyAnswer" />
+            </div>
+            <!-- 17-1 -->
+            <div class="video">
+              <label for="video-1">Link of 1st video</label>
+              <input type="url" name="video-1" />
+            </div>
+            <!-- 17-2 -->
+            <div class="video">
+              <label for="video-2">Link of 2nd video</label>
+              <input type="url" name="video-2" />
+            </div>
+            <!-- 17-3 -->
+            <div class="video">
+              <label for="video-3">Link of 3rd video</label>
+              <input type="url" name="video-3" />
+            </div>
+            <!-- 18 -->
+
+            <div>
+              <label for="useCsmoneywithRu"
+                >Пользуйся cs.money вместе с: ссылка</label
+              >
+              <input type="text" name="useCsmoneywith" />
+            </div>
+            <!-- 19 -->
+
+            <div>
+              <label for="finalHeaderRu">Заголовок финального блока</label>
+              <input type="text" name="finalHeader" />
+            </div>
+            <!-- 20 -->
+
+            <!-- 21 -->
+            <div>
+              <label for="promocode">Promocode of final block</label>
+              <input type="text" name="promocode" />
+            </div>
+            <!-- 22 -->
+
+            <div>
+              <label for="finalButtonRu">Текст финальной кнопки</label>
+              <input type="text" name="finalButton" />
+            </div>
+            <!-- 23 -->
+
+            <div>
+              <label for="textUnderFinalButtonRu"
+                >Текст под финальной кнопкой</label
+              >
+              <input type="text" name="textUnderFinalButton" />
+            </div>
+            <!-- button -->
+            <button type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const engBtn = document.getElementById("en-btn");
+      const rusBtn = document.getElementById("ru-btn");
+      const engDiv = document.querySelector(".form-en");
+      const rusDiv = document.querySelector(".form-ru");
+      const form = document.querySelector(".form-wrapper");
+      const createButton = document.getElementById("newPageBtn");
+      const inputFields = document.querySelectorAll("input");
+      engBtn.onclick = () => {
+        engDiv.style.display = "block";
+        rusDiv.style.display = "none";
+        console.log(inputFields);
+        for (let i = 0; i < inputFields.length; i++) {
+          inputFields[i].setAttribute("required", "required");
+        }
+      };
+      rusBtn.onclick = () => {
+        rusDiv.style.display = "block";
+        engDiv.style.display = "none";
+        console.log(inputFields);
+        for (let i = 0; i < inputFields.length; i++) {
+          inputFields[i].setAttribute("required", "required");
+        }
+      };
+
+      createButton.onclick = () => {
+        form.style.display = "block";
+      };
+    </script>
+  </body>
+</html>

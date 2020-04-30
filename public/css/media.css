@@ -1,0 +1,210 @@
+@media (max-width: 1140px) {
+  .instruction-title {
+    margin-bottom: 50px;
+  }
+  .steps {
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 1000px;
+  }
+  .step {
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+  .step:after {
+    width: 0px;
+    height: 80px;
+  }
+
+  /* step-1 */
+  .step:nth-child(1) .step-description {
+    margin-top: 20px;
+  }
+  .step:nth-child(1):after {
+    left: 100px;
+    top: 230px;
+  }
+
+  /* step-2 */
+  .step:nth-child(2) {
+    margin-left: -28px;
+  }
+  .step:nth-child(2):after {
+    left: 100px;
+    top: 230px;
+  }
+
+  /* step-3 */
+  .step:nth-child(3) {
+    margin-left: -60px;
+  }
+  .step:nth-child(3):after {
+    top: 260px;
+    left: 120px;
+  }
+
+  /* step-4 */
+  .step:nth-child(4) {
+    margin-left: -30px;
+  }
+
+  /* chat */
+  .chat {
+    margin-bottom: 150px;
+  }
+  /* Videos */
+  .videos {
+    max-width: 800px;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .video {
+    margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 851px) {
+  .container {
+    margin: 0 auto;
+    max-width: 851px;
+  }
+  .get-bonus {
+    display: none;
+  }
+  .header {
+    margin: 20px 0px;
+    justify-content: center;
+  }
+
+  .logos {
+    margin-left: 10px;
+    width: 95vw;
+    justify-content: center;
+  }
+  .csmoney-logo,
+  .partner-logo {
+    height: 70px;
+  }
+  .partner-logo {
+    align-items: center;
+    font-size: 34px;
+  }
+  .circle {
+    width: 95vw;
+    height: 95vw;
+  }
+
+  .image img {
+    margin: 0 auto;
+    margin-top: 100px;
+    max-width: 95vw;
+  }
+
+  .background-image-usp,
+  .background-image-knife,
+  .background-image-scout,
+  .background-blur {
+    display: none;
+  }
+  .circle-line {
+    display: none;
+  }
+  .get-bonus-container {
+    margin: 0 auto;
+    margin-top: 50px;
+    /* max-width: 320px; */
+  }
+  .get-bonus-title {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  .get-bonus-description {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .instruction-title {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .gaules-about-title {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  .chat {
+    margin: 0 15px;
+    margin-bottom: 120px;
+  }
+  .from-user {
+    flex-direction: column;
+  }
+  .user-avatar,
+  .our-avatar {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .user-avatar img,
+  .our-avatar img {
+    transform: translate(-50%, -50%);
+    width: 21.46px;
+    height: 14.63px;
+  }
+  .user-comment {
+    max-width: 320px;
+  }
+  .comment-text {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 100;
+  }
+
+  .from-csmoney {
+    flex-direction: column-reverse;
+    margin-right: 00px;
+  }
+  .our-avatar {
+    align-self: flex-end;
+  }
+  .our-comment {
+    margin-right: 20px;
+  }
+  .check-review-wrapper {
+    width: 300px;
+    left: 50px;
+    bottom: 190px;
+  }
+
+  .footer-wrapper {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 362px) {
+  .csmoney-logo,
+  .partner-logo {
+    height: 50px;
+  }
+  .check-review-wrapper {
+    width: 300px;
+    left: 50px;
+    top: 490px;
+  }
+
+  .activation-promo {
+    width: 334px;
+  }
+  .promocode {
+    width: 120px;
+    padding: 15px 14px;
+  }
+  .activate-button {
+    width: 180px;
+    padding: 17px 48px 13px 49px;
+  }
+}

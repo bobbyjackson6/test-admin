@@ -1,0 +1,12 @@
+.container {
+  max-width: 1304px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ea4a8e;
+}
+.make-new-page {
+  align-self: flex-end;
+}
