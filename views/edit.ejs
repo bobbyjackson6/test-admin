@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit page For <%= user.title_en%></title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    window.onbeforeunload = function () {
+      return false;
+    };
+  </script>
+   <script>
+     'use strict';
+    window.onbeforeunload = function () {
+      return "Есть несохранённые изменения. Всё равно уходим?";
+    };
+  </script>
+  <style>
+    .form {
+      display: flex;
+      flex-direction: column;
+      margin: 50px auto;
+      width: 800px;
+    }
+
+    .form button {
+      margin: 0 auto;
+      width: 100px;
+    }
+
+    .wrappers {
+      display: flex;
+    }
+  </style>
+  <form class="form" action="/influencer/edit/<%= user.title_en %>" method="post" class="info">
+    <div class="wrappers">
+      <div class="en-wrapepr">
+        <!-- 1 -->
+        <div>
+          <label for="titleEn">En-Title</label>
+          <input value="<%= user.title_en %>" name="title_en" type="text" />
+        </div>
+
+        <!-- 2 -->
+        <div>
+          <label for="descriptionEn">En-Description</label>
+          <input value="<%= user.description_en %>" name="description_en" type="text" />
+        </div>
+
+        <!-- 3 -->
+        <div>
+          <label for="aliasEn">En-Alias</label>
+          <input value="<%= user.alias_en %>" type="text" name="alias_en" />
+        </div>
+
+        <!-- 4 -->
+        <div>
+          <label for="firstLogoEn">Header Logo </label>
+          <input value="<%= user.headerLogo  %>" name="headerLogo" type="file" required />
+        </div>
+
+        <!-- 5 -->
+        <div>
+          <label for="secondLogoEn">Chat Logo</label>
+          <input value="<%= user.chatLogo  %>" name="chatLogo" type="file" required />
+        </div>
+
+        <!-- 6 -->
+        <div>
+          <label for="bloggerNameEn">Name of blogger</label>
+          <input value=<%= user.bloggerName_en %> type="text" name="bloggerName_en" />
+        </div>
+
+        <!-- 7 -->
+        <div>
+          <label for="mainHeaderEn">Main header</label>
+          <input value="<%= user.mainHeader_en %>" name="mainHeader_en" type="text" />
+        </div>
+
+        <!-- 8 -->
+        <div>
+          <label for="underTitleText_en">Text under Title</label>
+          <input value="<%= user.underTitleText_en %>" type="text" name="underTitleText_en" />
+        </div>
+
+        <!-- 9 -->
+        <div>
+          <label for="buttonTextEn">Button text</label>
+          <input value="<%= user.buttonText_en%>" type="text" name="buttonText_en" />
+        </div>
+
+        <!-- 10 -->
+
+        <div>
+          <label for="infoHeaderEn">Title of info</label>
+          <input value="<%= user.infoHeader_en %>" type="text" name="infoHeader_en" />
+        </div>
+
+        <!-- 11-1 -->
+        <div>
+          <label for="firstImageTextEn">Text of 1 image</label>
+          <input value="<%= user.firstImageText_en %>" type="text" name="firstImageText_en" />
+        </div>
+
+        <!-- 11-2 -->
+        <div>
+          <label for="secondImageTextEn">Text of 2 image</label>
+          <input value="<%= user.secondImageText_en %>" type="text" name="secondImageText_en" />
+        </div>
+
+        <!-- 11-3 -->
+        <div>
+          <label for="thirdImageTextEn">Text of 3 image</label>
+          <input value="<%= user.thirdImageText_en %>" type="text" name="thirdImageText_en" />
+        </div>
+
+        <!-- 11-4 -->
+        <div>
+          <label for="fourthImageTextEn">Text of 4 image</label>
+          <input value="<%= user.fourthImageText_en %>" type="text" name="fourthImageText_en" />
+        </div>
+
+        <!-- 12 -->
+        <div>
+          <label for="feedbackHeaderEn">Header of feedback</label>
+          <input value="<%= user.feedbackHeader_en %>" type="text" name="feedbackHeader_en" />
+        </div>
+
+        <!-- 13 -->
+        <div>
+          <label for="feedbackTextEn">Text of feedback</label>
+          <input value="<%= user.feedbackText_en%>" type="text" name="feedbackText_en" />
+        </div>
+
+        <!-- 14 -->
+        <div>
+          <label for="reviewLinkEn">Review text link</label>
+          <input value="<%= user.reviewLink_en %>" type="text" name="reviewLink_en" />
+        </div>
+
+        <!-- 15 -->
+        <div>
+          <label for="csmoneyAnswerEn">CS.MONEY answer</label>
+          <input value="<%= user.csmoneyAnswer_en %>" type="text" name="csmoneyAnswer_en" />
+        </div>
+
+        <!-- 16-1 -->
+        <div class="video">
+          <label for="firstVideoLink">Link of 1st video</label>
+          <input value="<%= user.firstVideoLink  %>" type="url" name="firstVideoLink" />
+        </div>
+        <!-- 16-2 -->
+        <div class="video">
+          <label for="secondVideoLink">Link of 2nd video</label>
+          <input value="<%= user.secondVideoLink  %>" type="url" name="secondVideoLink" />
+        </div>
+        <!-- 16-3 -->
+        <div class="video">
+          <label for="thirdVideoLink">Link of 3rd video</label>
+          <input value="<%= user.thirdVideoLink  %>" type="url" name="thirdVideoLink" />
+        </div>
+        <!-- 17 -->
+        <div>
+          <label for="useCsmoneyTitle_en">use CS.Money with: link</label>
+          <input value="<%= user.useCsmoneyTitle_en %>" type="text" name="useCsmoneyTitle_en" />
+        </div>
+
+        <!-- 18 -->
+        <div>
+          <label for="finalHeaderEn">Header of final Block</label>
+          <input value="<%= user.finalBlockHeader_en %>" type="text" name="finalBlockHeader_en" />
+        </div>
+
+        <!-- 19 -->
+        <div>
+          <label for="promocode">Promocode of final block</label>
+          <input value="<%= user.promocode  %>" type="text" name="promocode" />
+        </div>
+        <!-- 20 -->
+        <div>
+          <label for="finalButtonEn">Text of final button</label>
+          <input value="<%= user.finalButtonText_en %>" type="text" name="finalButtonText_en" />
+        </div>
+
+        <!-- 21 -->
+        <div>
+          <label for="textUnderFinalButton">Text under final button</label>
+          <input value="<%= user.textUnderFinalButton_en %>" type="text" name="textUnderFinalButton_en" />
+        </div>
+      </div>
+      <!-- button -->
+      <div class="ru-wrapper">
+        <!-- 1 -->
+        <div>
+          <label for="titleRu">Ru-Title</label>
+          <input value="<%= user.title_ru %>" name="title_ru" type="text" />
+        </div>
+        <!-- 2 -->
+
+        <div>
+          <label for="descriptionRu">Ru-Description</label>
+          <input value="<%= user.description_ru %>" name="description_ru" type="text" />
+        </div>
+        <!-- 3 -->
+
+        <div>
+          <label for="aliasRu">Ru-Alias</label>
+          <input value="<%= user.alias_ru %>" type="text" name="alias_ru" />
+        </div>
+        <!-- 4 -->
+
+
+        <div>
+          <label for="bloggerName">Name of blogger</label>
+          <input value="<%= user.bloggerName_ru %>" type="text" name="bloggerName_ru" />
+        </div>
+        <!-- 7 -->
+
+        <div>
+          <label for="mainHeaderRu">Главный заголовок</label>
+          <input value="<%= user.mainHeader_ru %>" name="mainHeader_ru" type="text" />
+        </div>
+        <!-- 8 -->
+
+        <div>
+          <label for="underTitleText_ru">Текст под заголовком</label>
+          <input value="<%= user.underTitleText_ru %>" type="text" name="underTitleText_ru" />
+        </div>
+        <!-- 9 -->
+
+        <div>
+          <label for="buttonTextRu">Текст кнопки</label>
+          <input value="<%= user.buttonText_ru%>" type="text" name="buttonText_ru" />
+        </div>
+        <!-- 10 -->
+
+        <div>
+          <label for="infoHeaderRu">Заголовок блока инфографики</label>
+          <input value="<%= user.infoHeader_ru %>" type="text" name="infoHeader_ru" />
+        </div>
+        <!-- 11-1 -->
+
+        <div>
+          <label for="imageText1Ru">Текст под 1 изображением</label>
+          <input value="<%= user.firstImageText_ru %>" type="text" name="firstImageText_ru" />
+        </div>
+        <!-- 11-2 -->
+
+        <div>
+          <label for="imageText2Ru">Текст под 2 изображением</label>
+          <input value="<%= user.secondImageText_ru %>" type="text" name="secondImageText_ru" />
+        </div>
+        <!-- 11-3 -->
+
+        <div>
+          <label for="imageText3Ru">Текст под 3 изображением</label>
+          <input value="<%= user.thirdImageText_ru %>" type="text" name="thirdImageText_ru" />
+        </div>
+        <!-- 11-4 -->
+
+        <div>
+          <label for="imageText4Ru">Текст под 4 изображением</label>
+          <input value="<%= user.fourthImageText_ru %>" type="text" name="fourthImageText_ru" />
+        </div>
+        <!-- 12 -->
+
+        <div>
+          <label for="feedbackHeaderRu">Заголовок отзыва</label>
+          <input value="<%= user.feedbackHeader_ru %>" type="text" name="feedbackHeader_ru" />
+        </div>
+        <!-- 13 -->
+
+        <div>
+          <label for="feedbackTextRu">Текст отзыва</label>
+          <input value="<%= user.feedbackText_ru %>" type="text" name="feedbackText_ru" />
+        </div>
+        <!-- 14 -->
+
+        <div>
+          <label for="reviewLinkRu">Текст на ссылку отзывов</label>
+          <input value="<%= user.reviewLink_ru %>" type="text" name="reviewLink_ru" />
+        </div>
+        <!-- 15 -->
+
+        <div>
+          <label for="csmoneyAnswerRu">Ответ CS.MONEY</label>
+          <input value="<%= user.csmoneyAnswer_ru %>" type="text" name="csmoneyAnswer_ru" />
+        </div>
+
+        <div>
+          <label for="useCsmoneyTitle_ru">Пользуйся cs.money с</label>
+          <input value="<%= user.useCsmoneyTitle_ru %>" type="text" name="useCsmoneyTitle_ru" />
+        </div>
+        <!-- 18 -->
+
+        <div>
+          <label for="finalHeaderRu">Заголовок финального блока</label>
+          <input value="<%= user.finalBlockHeader_ru %>" type="text" name="finalBlockHeader_ru" />
+        </div>
+
+        <div>
+          <label for="finalButtonRu">Текст финальной кнопки</label>
+          <input value="<%= user.finalButtonText_ru %>" type="text" name="finalButtonText_ru" />
+        </div>
+        <!-- 21 -->
+        <div>
+          <label for="textUnderFinalButtonRu">Текст под финальной кнопкой</label>
+          <input value="<%= user.textUnderFinalButton_ru %>" type="text" name="textUnderFinalButton_ru" />
+        </div>
+      </div>
+    </div>
+    <button type="submit">Send</button>
+
+  </form>
+</body>
+
+</html>
