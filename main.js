@@ -2,46 +2,53 @@ const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
 
-const Page = require("./config/mongoose").Page;
-const Admins = require("./config/mongoose").Admins;
+const flash = require('connect-flash')
+const session = require('express-session')
+const passport = require('passport');
 
-const bodyParser = require("body-parser");
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const Page = require("./config/mongoose").Page;
 
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 
+
+require('./config/passport')(passport)
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(express.urlencoded({ extended: false }))
+app.use(session({
+  secret: 'secret123',
+  saveUninitialized: true,
+  resave: true
+}))
+app.use(passport.initialize())
+app.use(passport.session());
+app.use(flash())
 
-app.get("/", (req, res) => {
-  res.sendFile(123);
-});
 
-app.get("/shimbabumba", (req, res) => {
-  res.render(__dirname + "/views/login.ejs");
-});
-app.post("/shimbabumba", urlencodedParser, (req, res) => {
-  if (!req.body) {
-    return res.status(400);
+
+app.get("/shimbabumba",async(req, res) => {
+  const error = await req.flash();
+  console.log('error', error)
+  res.render(__dirname + "/views/login.ejs", {
+    error:error
   }
-  if (
-    Admins.find({
-      login: req.body.login,
-      password: req.body.password,
-    })
-  ) {
-    res.redirect("/shimbabumba/admin");
-  }
+   );
 });
+app.post('/shimbabumba', passport.authenticate('login', {
+  successRedirect: '/shimbabumba/admin',
+  failureRedirect: '/shimbabumba',
+  failureFlash: true
+}));
 
-app.get("/shimbabumba/admin", async (req, res) => {
+
+app.get("/shimbabumba/admin", isLoggedIn, async (req, res) => {
   const result = await Page.find({}, { title_en: 1 });
   res.render(__dirname + "/views/shimbabumba.ejs", {
     pages: result,
   });
 });
-app.post("/shimbabumba/admin", urlencodedParser, (req, res) => {
+app.post("/shimbabumba/admin", (req, res) => {
   if (!req.body) return res.sendStatus(400);
   Page.create({
     title_en: req.body.title_en,
@@ -94,20 +101,17 @@ app.post("/shimbabumba/admin", urlencodedParser, (req, res) => {
   }).then(res.redirect("/shimbabumba/admin"));
 });
 
-// app.use((req, res, next) => {
-//   res.status(404).send("The page doesn't exist");
-// });
 
-// app.get("/:id", (req, res) => {
-//   const id = req.params.id;
-//   Page.findOne({ title: id }, function (err, user) {
-//     if (err) return console.log(err);
-//     console.log(user);
-//     res.render(__dirname + "/views/influencer.ejs", {
-//       pageInfo: user,
-//     });
-//   });
-// });
+app.get('/shimbabumba/logout', (req, res) => {
+  req.logOut();
+  res.redirect('/shimbabumba')
+})
+
+function isLoggedIn(req,res, next){
+  if (req.isAuthenticated())
+  return next()
+  res.redirect('/shimbabumba')
+}
 
 app.get("/influencer/:name", async (req, res) => {
   try {
@@ -135,7 +139,7 @@ app.get("/influencer/edit/:name", async (req, res) => {
     user: result[0],
   });
 });
-app.post("/influencer/edit/:name", urlencodedParser, (req, res) => {
+app.post("/influencer/edit/:name", (req, res) => {
   Page.findOneAndUpdate(
     { title_en: req.body.title_en },
     {
@@ -192,7 +196,6 @@ app.post("/influencer/edit/:name", urlencodedParser, (req, res) => {
 });
 
 app.get("/influencer/delete/:name", (req, res) => {
-  console.log("get params", req.params);
   Page.findOneAndDelete({ title_en: req.params.name }).then((err, result) => {
     if (err) {
       console.log(err);
@@ -201,12 +204,13 @@ app.get("/influencer/delete/:name", (req, res) => {
   });
 });
 
+
+app.get("*", (req,res)=>{
+  res.status(404).send("The page doesn't exist");
+})
+
+
 http.listen(3000, () => {
   console.log("listening on port 3000");
 });
 
-/*
-Сделать сессии
-Поставить регулярки по ТЗ
-Раскидать код по файлам
-*/

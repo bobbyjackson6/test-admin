@@ -48,20 +48,24 @@
         border: 3px solid #529fcd;
         margin-bottom: 5px;
       }
+      .error{
+        text-align: right;
+      }
     </style>
     <h1>Log in</h1>
+    <div class="error"><%= error.loginMessage %> </div>
     <form method="POST" action="/shimbabumba">
       <div class="wrapper">
         <label for="name">
           name
         </label>
-        <input name="login" type="text" placeholder="Login" />
+        <input name="login" type="text" placeholder="Login" required/>
       </div>
       <div class="wrapper">
         <label for="name">
           Password
         </label>
-        <input name="password" type="password" placeholder="Password" />
+        <input name="password" type="password" placeholder="Password" required/>
       </div>
       <input type="submit" value="Confirm" />
     </form>

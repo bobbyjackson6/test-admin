@@ -10,6 +10,7 @@
 
 <body>
   <style>
+    
     body {
       padding: 0;
       margin: 0;
@@ -70,18 +71,21 @@
       display: flex;
       align-items: flex-start;
     }
+    .logout{
+      align-self: start;
+      margin-left: 70px;
+    }
   </style>
   <div class="container">
     <h2>Admin Panel</h2>
     <div class="make-new-page">
-      <input type="button" value="Create New Page" id="newPageBtn" />
+      <input type="button" value="Create New Page" id="newPageBtn" onclick="createPage()"/>
     </div>
     <div class="main">
       <div class="pages">
         Список страниц:
         <ul class="list">
           <% for (title of pages) {%>
-
           <li class="li" id="<%= title.title_en%>">
             <form action="/influencer/edit/<%= title.title_en %>" method="POST" name="<%= title.title_en %>"></form>
             <a href="/influencer/<%= title.title_en%>" target="_blank"><%= title.title_en%></a>
@@ -90,12 +94,8 @@
               Edit
             </button>
             </form>
-            <!-- <form action="/influencer/delete/<%= title.title_en %>" method="POST" name="<%= title.title_en %>">
-              <button type="submit" id="<%=title.title_en%>" class="delete-btn" onclick="window.location.href()">Delete</button>
-            </form> -->
             <button onclick="confirm('Вы уверены, что хотите удалить страницу?')"><a href="/influencer/delete/<%= title.title_en %>">Удалить</a></button>
           </li>
-
           <% } %>
         </ul>
       </div>
@@ -381,15 +381,13 @@
         </form>
       </div>
     </div>
+    <button class="logout"><a href="/shimbabumba/logout">LogOut</a></button>
   </div>
-  <script src="/socket.io/socket.io.js"></script>
   <script>
-    var socket = io();
     const engBtn = document.getElementById("en-btn");
     const rusBtn = document.getElementById("ru-btn");
     const engDiv = document.querySelector(".en-wrapper");
     const rusDiv = document.querySelector(".ru-wrapper");
-    const form = document.querySelector(".form-wrapper");
     const createButton = document.getElementById("newPageBtn");
     const editBtn = document.querySelectorAll(".edit-btn");
     const list = document.querySelector(".list");
@@ -398,10 +396,10 @@
       inputFields[i].setAttribute('required', 'required')
     }
 
-    createButton.onclick = () => {
-      form.style.display = "block";
-    };
-
+function createPage() {
+  const form = document.querySelector(".form-wrapper");
+  form.style.display = "block";
+}
   </script>
 </body>
 

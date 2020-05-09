@@ -9,7 +9,6 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-mongoose.set("debug", true);
 const AdminSchema = new mongoose.Schema({
   login: {
     type: String,
@@ -26,6 +25,7 @@ const AdminSchema = new mongoose.Schema({
 const PageSchema = new mongoose.Schema({
   title_en: {
     $regex: /\w/,
+    unique:true,
     type: String,
   },
   description_en: {
@@ -175,6 +175,7 @@ const PageSchema = new mongoose.Schema({
 
 const Admins = mongoose.model("admins", AdminSchema);
 const Page = mongoose.model("pages", PageSchema);
+
 // End mongo
 
 module.exports.Admins = Admins;
