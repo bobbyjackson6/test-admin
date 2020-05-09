@@ -26,7 +26,6 @@ app.use(passport.session());
 app.use(flash())
 
 
-
 app.get("/shimbabumba",async(req, res) => {
   const error = await req.flash();
   console.log('error', error)
