@@ -88,7 +88,7 @@
           <% for (title of pages) {%>
           <li class="li" id="<%= title.title_en%>">
             <form action="/influencer/edit/<%= title.title_en %>" method="POST" name="<%= title.title_en %>"></form>
-            <a href="/influencer/<%= title.title_en%>" target="_blank"><%= title.title_en%></a>
+            <a href="/<%= title.title_en%>" target="_blank"><%= title.title_en%></a>
             <button id="<%=title.title_en%>" class="edit-btn" type="submit"
               onclick="window.open('/influencer/edit/<%= title.title_en %>')">
               Edit

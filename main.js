@@ -112,7 +112,7 @@ function isLoggedIn(req,res, next){
   res.redirect('/shimbabumba')
 }
 
-app.get("/influencer/:name", async (req, res) => {
+app.get("/:name", async (req, res) => {
   try {
     const result = await Page.find({ title_en: req.params.name });
     const firstVideoID = getYouTubeID(result[0].firstVideoLink);
@@ -212,4 +212,5 @@ app.get("*", (req,res)=>{
 http.listen(3000, () => {
   console.log("listening on port 3000");
 });
+
 
