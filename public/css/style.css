@@ -64,7 +64,9 @@ body {
   width: 670.56px;
   height: 670.56px;
   border: 1px dashed rgba(255, 255, 255, 0.3);
-  margin: -62px auto;
+  margin: 0 auto;
+  margin-top: -62px;
+  margin-bottom: 354px;
   position: relative;
   border-radius: 50%;
   pointer-events: none;
@@ -263,13 +265,12 @@ body {
 .instruction-wrapper {
   max-width: 1304px;
   margin: 0 auto;
-  padding-top: 346px;
   background: radial-gradient(
     54.93% 54.93% at 50% 50%,
     rgba(176, 162, 252, 0.35) 0%,
     rgba(0, 0, 0, 0) 77.6%
   );
-  padding-bottom: 165px;
+  padding-bottom: 241px;
 }
 .instruction-title {
   text-align: center;
@@ -559,17 +560,6 @@ body {
   text-align: left;
 }
 
-/* .video img {
-  width: 100%;
-}
-.play-button {
-  outline: none;
-  position: absolute;
-  left: 160px;
-  top: 75px;
-  border-radius: 50%;
-} */
-
 /* USE CSMONEY */
 
 .call-to-action {
@@ -735,4 +725,3 @@ body {
 .en {
   display: none;
 }
-/*  */
