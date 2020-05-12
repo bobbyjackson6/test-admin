@@ -1,45 +1,47 @@
 const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
+const PORT = process.env.PORT || 80;
 
-const flash = require('connect-flash')
-const session = require('express-session')
-const passport = require('passport');
+const flash = require("connect-flash");
+const session = require("express-session");
+const passport = require("passport");
 
 const Page = require("./config/mongoose").Page;
 
 const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 
-
-require('./config/passport')(passport)
+require("./config/passport")(passport);
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-app.use(express.urlencoded({ extended: false }))
-app.use(session({
-  secret: 'secret123',
-  saveUninitialized: true,
-  resave: true
-}))
-app.use(passport.initialize())
+app.use(express.urlencoded({ extended: false }));
+app.use(
+  session({
+    secret: "secret123",
+    saveUninitialized: true,
+    resave: true,
+  })
+);
+app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash())
+app.use(flash());
 
-
-app.get("/shimbabumba",async(req, res) => {
+app.get("/shimbabumba", async (req, res) => {
   const error = await req.flash();
-  console.log('error', error)
+  console.log("error", error);
   res.render(__dirname + "/views/login.ejs", {
-    error:error
-  }
-   );
+    error: error,
+  });
 });
-app.post('/shimbabumba', passport.authenticate('login', {
-  successRedirect: '/shimbabumba/admin',
-  failureRedirect: '/shimbabumba',
-  failureFlash: true
-}));
-
+app.post(
+  "/shimbabumba",
+  passport.authenticate("login", {
+    successRedirect: "/shimbabumba/admin",
+    failureRedirect: "/shimbabumba",
+    failureFlash: true,
+  })
+);
 
 app.get("/shimbabumba/admin", isLoggedIn, async (req, res) => {
   const result = await Page.find({}, { title_en: 1 });
@@ -100,16 +102,14 @@ app.post("/shimbabumba/admin", (req, res) => {
   }).then(res.redirect("/shimbabumba/admin"));
 });
 
-
-app.get('/shimbabumba/logout', (req, res) => {
+app.get("/shimbabumba/logout", (req, res) => {
   req.logOut();
-  res.redirect('/shimbabumba')
-})
+  res.redirect("/shimbabumba");
+});
 
-function isLoggedIn(req,res, next){
-  if (req.isAuthenticated())
-  return next()
-  res.redirect('/shimbabumba')
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect("/shimbabumba");
 }
 
 app.get("/:name", async (req, res) => {
@@ -203,13 +203,10 @@ app.get("/influencer/delete/:name", (req, res) => {
   });
 });
 
-
-app.get("*", (req,res)=>{
+app.get("*", (req, res) => {
   res.status(404).send("The page doesn't exist");
-})
-
-
-http.listen(3000, () => {
-  console.log("listening on port 3000");
 });
 
+http.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
+});
