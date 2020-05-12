@@ -138,6 +138,7 @@ app.get("/influencer/edit/:name", async (req, res) => {
     user: result[0],
   });
 });
+
 app.post("/influencer/edit/:name", (req, res) => {
   Page.findOneAndUpdate(
     { title_en: req.body.title_en },
