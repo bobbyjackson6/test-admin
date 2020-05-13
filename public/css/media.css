@@ -35,32 +35,38 @@
     height: 80px;
   }
   /* step-1 */
+  .step:nth-child(1) .step-image {
+    margin-left: 21px;
+  }
   .step:nth-child(1) .step-description {
+    margin: 0 auto;
     margin-top: 20px;
   }
-  .step:nth-child(1):after {
-    left: 100px;
-    top: 230px;
-  }
   /* step-2 */
-  .step:nth-child(2) {
-    margin-left: -28px;
+  .step:nth-child(2) .step-description {
+    margin: 0 auto;
+    margin-top: 20px;
   }
-  .step:nth-child(2):after {
-    left: 100px;
-    top: 230px;
-  }
+
   /* step-3 */
-  .step:nth-child(3) {
-    margin-left: -60px;
+
+  .step:nth-child(3) .step-description {
+    width: 201px;
+    margin-top: 20px;
   }
-  .step:nth-child(3):after {
-    top: 260px;
-    left: 120px;
-  }
+
   /* step-4 */
   .step:nth-child(4) {
-    margin-left: -30px;
+    margin-top: 80px;
+  }
+  .step:nth-child(4) .step-description {
+    margin-top: 0px;
+  }
+  .step:nth-child(1):after,
+  .step:nth-child(2):after,
+  .step:nth-child(3):after {
+    top: 250px;
+    left: 123px;
   }
   /* chat */
   .chat {
@@ -79,7 +85,8 @@
 }
 
 @media (max-width: 1010px) {
-  .circle-line, .background-blur {
+  .circle-line,
+  .background-blur {
     display: none;
   }
 }
@@ -101,7 +108,8 @@
     width: 95vw;
     justify-content: center;
   }
-  .csmoney-logo, .partner-logo {
+  .csmoney-logo,
+  .partner-logo {
     height: 70px;
   }
   .partner-logo {
@@ -123,7 +131,6 @@
   .get-bonus-container {
     margin: 0 auto;
     margin-top: 50px;
-    /* max-width: 320px; */
   }
   .get-bonus-title {
     font-size: 42px;
@@ -151,12 +158,14 @@
   .from-user {
     flex-direction: column;
   }
-  .user-avatar, .our-avatar {
+  .user-avatar,
+  .our-avatar {
     width: 40px;
     height: 40px;
     margin-bottom: 10px;
   }
-  .user-avatar img, .our-avatar img {
+  .user-avatar img,
+  .our-avatar img {
     transform: translate(-50%, -50%);
     width: 21.46px;
     height: 14.63px;
@@ -185,13 +194,24 @@
     left: 33px;
     top: 479px;
   }
+
+  .call-to-action {
+    margin-top: 0;
+  }
   .footer-wrapper {
     flex-direction: column-reverse;
   }
 }
 
+@media (max-width: 471px) {
+  .call-to-action-title:after {
+    left: 39%;
+  }
+}
+
 @media (max-width: 435px) {
-  .csmoney-logo, .partner-logo {
+  .csmoney-logo,
+  .partner-logo {
     height: 50px;
   }
   .partner-name {
@@ -227,17 +247,22 @@
   .step {
     width: 300px;
   }
-  .step:nth-child(1), .step:nth-child(2), .step:nth-child(3), .step:nth-child(4) {
+  .step:nth-child(1),
+  .step:nth-child(2),
+  .step:nth-child(3),
+  .step:nth-child(4) {
     align-items: center;
   }
-  .step:nth-child(1):after, .step:nth-child(2):after, .step:nth-child(3):after {
+  .step:nth-child(1):after,
+  .step:nth-child(2):after,
+  .step:nth-child(3):after {
     left: 147px;
     top: 258px;
   }
-  .step:nth-child(3):after {
-    left: 159px;
+  .step:nth-child(2):after {
+    left: 152px;
   }
-  .user-comment{
+  .user-comment {
     margin-left: 20px;
   }
 }
