@@ -54,7 +54,9 @@ body {
   font-weight: 100;
   font-size: 14px;
 }
-
+a {
+  text-decoration: none;
+}
 .container {
   margin: 0 auto;
   max-width: 1425px;
@@ -658,7 +660,7 @@ body {
   content: "";
   width: 80px;
   border: 1px solid #8678d7;
-  bottom: -35px;
+  bottom: -36px;
   left: 212px;
 }
 
@@ -781,7 +783,7 @@ body {
   font-size: 16px;
   line-height: 22px;
   text-align: right;
-  color: #c0c0c2;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .social-media {

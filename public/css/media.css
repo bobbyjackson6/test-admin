@@ -47,14 +47,11 @@
     margin: 0 auto;
     margin-top: 20px;
   }
-
   /* step-3 */
-
   .step:nth-child(3) .step-description {
     width: 201px;
     margin-top: 20px;
   }
-
   /* step-4 */
   .step:nth-child(4) {
     margin-top: 80px;
@@ -148,9 +145,11 @@
     line-height: 34px;
   }
   .gaules-about-title {
-    font-size: 24px;
+    font-size: 28px;
     line-height: 34px;
+    margin-bottom: 20px;
   }
+
   .chat {
     margin: 0 15px;
     margin-bottom: 120px;
@@ -194,12 +193,21 @@
     left: 33px;
     top: 479px;
   }
-
   .call-to-action {
     margin-top: 0;
   }
+  .footer {
+    margin-top: 90px;
+  }
   .footer-wrapper {
     flex-direction: column-reverse;
+  }
+  .social-media {
+    width: 349px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: -8px;
+    margin-bottom: 20px;
   }
 }
 
@@ -212,10 +220,57 @@
 @media (max-width: 435px) {
   .csmoney-logo,
   .partner-logo {
-    height: 50px;
+    height: 40px;
+  }
+  .cross {
+    padding-top: 7px;
+    padding-left: 5px;
+    height: 16px;
+  }
+  .partner-logo img {
+    height: 18px;
   }
   .partner-name {
-    font-size: 28px;
+    font-size: 21px;
+  }
+  .circle-line {
+    display: block;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+  }
+  .background-image-m4 {
+    width: 244px;
+    top: -13px;
+    left: -49px;
+    filter: blur(2px);
+  }
+  .background-image-gloves {
+    width: 104px;
+    top: 205px;
+    left: -4px;
+  }
+  .background-image-usp {
+    display: block;
+    width: 149px;
+    top: 52px;
+    left: 189px;
+  }
+  .background-image-knife {
+    display: block;
+    width: 77px;
+    top: 200px;
+    left: 312px;
+  }
+  .get-bonus-container {
+    margin-top: 30px;
+  }
+  .get-bonus-button {
+    margin-top: 40px;
+  }
+  .get-bonus-description {
+    margin-top: 14px;
   }
   .instruction-title {
     margin-bottom: 0;
@@ -231,6 +286,7 @@
   .activation-promo {
     max-width: 340px;
     justify-content: space-between;
+    margin-right: 17px;
   }
   .promocode {
     width: 130px;
@@ -240,6 +296,37 @@
   }
   .activation-tip {
     width: 340px;
+  }
+  .background-image-scout {
+    display: block;
+    width: 249px;
+    left: 178px;
+    top: -81px;
+    filter: blur(5px);
+  }
+  .background-image-butterfly {
+    filter: blur(5px);
+    transform: rotate(-162.08deg);
+    width: 122px;
+    left: -39px;
+    bottom: -25px;
+  }
+  .background-blur {
+    display: block;
+    width: 1092.56px;
+    height: 493.94px;
+    left: -500px;
+    top: -176px;
+
+    background: radial-gradient(
+      36.18% 43.79% at 50% 50%,
+      #b0a2fc 0%,
+      rgba(33, 33, 38, 0) 100%
+    );
+    mix-blend-mode: lighten;
+    opacity: 0.35;
+    filter: blur(50px);
+    transform: rotate(-15.47deg);
   }
   .steps {
     display: flex;
@@ -260,9 +347,19 @@
     top: 258px;
   }
   .step:nth-child(2):after {
-    left: 152px;
+    left: 149px;
   }
+
   .user-comment {
     margin-left: 20px;
+  }
+  .video-title {
+    font-size: 21px;
+  }
+  .call-to-action-title {
+    font-size: 28px;
+    line-height: 42px;
+    width: 320px;
+    margin: 18px auto;
   }
 }
